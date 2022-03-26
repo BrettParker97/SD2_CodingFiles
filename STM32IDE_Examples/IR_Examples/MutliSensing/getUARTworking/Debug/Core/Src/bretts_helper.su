@@ -1,0 +1,4 @@
+bretts_helper.c:13:15:Brett_VL53L0X_StartMultiSensing	24	static
+bretts_helper.c:25:15:Brett_VL53L0X_FinishMultiSensing	24	static
+bretts_helper.c:55:5:Brett_IR_StartMulti	72	static
+bretts_helper.c:104:5:Brett_IR_InitIrSensor	48	static
