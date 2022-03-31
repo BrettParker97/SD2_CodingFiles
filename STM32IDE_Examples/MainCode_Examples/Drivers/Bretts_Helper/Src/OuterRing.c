@@ -7,11 +7,12 @@
 
 #include "OuterRing.h"
 #include "CONSTANTS.h"
+#include <stdbool.h>
 
 
 
 // TODO: give ptr to GPS data
-int OuterRing_init(int *initalHitDis)
+int OuterRing_init(float *initalHitDis)
 {
 	// TODO: Capture our current position
 
@@ -19,7 +20,7 @@ int OuterRing_init(int *initalHitDis)
 }
 
 
-int OuterRing_control(int distances[], int reason, bool initalDetachHit, int initalHitDis)
+int OuterRing_control(int distances[], int reason, bool initalDetachHit, float initalHitDis)
 {
 	// reason == 1 means object ahead
 	if (reason == 1)

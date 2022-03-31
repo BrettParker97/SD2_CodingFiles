@@ -5,6 +5,8 @@
 #include "vl53l0x_api.h"
 #include "NoObject.h"
 #include "CONSTANTS.h"
+#include "OuterRing.h"
+#include "InnerRing.h"
 
 // prototypes
 VL53L0X_API VL53L0X_Error Brett_VL53L0X_StartMultiSensing(VL53L0X_DEV Dev);

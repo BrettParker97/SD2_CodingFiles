@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include <Time.h>
+#include <stdbool.h>
 
 #include "main.h"
 #include "stm32F4xx_hal.h"
@@ -32,8 +33,8 @@ int brett_status = 0;
 int distances[AMOUNT_IRS];
 float initalHitDis;
 bool initalDetachHit;
-Time_t timer_IR = startTime;
-Time_t timer_GPS = startTime;
+time_t timer_IR;
+time_t timer_GPS;
 
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
@@ -80,7 +81,7 @@ int main(void)
   // VL53L0X_Error Brett_VL53L0X_FinishMultiSensing(VL53L0X_DEV Dev, VL53L0X_RangingMeasurementData_t *pRangingMeasurementData);
 
   // init update timers
-  Time_t startTime = clock();
+  time_t startTime = clock();
   timer_IR = startTime;
   timer_GPS = startTime;
 
@@ -94,7 +95,7 @@ int main(void)
 int Loop3_NoObject()
 {
 	// grab current clock time
-	Time_t currentTime = clock();
+	time_t currentTime = clock();
 
 	// check GPS
 	if (timer_GPS + DELAY_GPS >= currentTime)
@@ -119,8 +120,8 @@ int Loop3_NoObject()
 		timer_IR = currentTime;
 
 		// check if object is in front of us
-		bol objectInOuterRing = false;
-		if (distaces[SENSOR_FRONT] < RANGE_OUTER)
+		bool objectInOuterRing = false;
+		if (distances[SENSOR_FRONT] < RANGE_OUTER)
 			objectInOuterRing = true;
 		if (objectInOuterRing)
 		{
@@ -144,6 +145,7 @@ int Loop3_NoObject()
 			}
 		}
 	}
+	return 0;
 }
 
 int Loop4_OuterLoop(int *reason)
@@ -151,7 +153,7 @@ int Loop4_OuterLoop(int *reason)
 	while (1)
 	{
 		// grab current clock time
-		Time_t currentTime = clock();
+		time_t currentTime = clock();
 
 		// check GPS
 		if (timer_GPS + DELAY_GPS >= currentTime)
@@ -176,7 +178,7 @@ int Loop4_OuterLoop(int *reason)
 			timer_IR = currentTime;
 
 			// check if there is an object in inner ring
-			bol objectInInnerRing = false;
+			bool objectInInnerRing = false;
 			int hitDir;
 			for (int i = 0; i < AMOUNT_IRS; i++)
 			{
@@ -190,7 +192,7 @@ int Loop4_OuterLoop(int *reason)
 
 			// if there is something in inner ring
 			// call inner loop
-			if (objectInOuterRing)
+			if (objectInInnerRing)
 			{
 				// init
 
@@ -211,7 +213,7 @@ int Loop4_OuterLoop(int *reason)
 		}
 
 		// check for objects infront of us
-		if (distnaces[SENSOR_FRONT < RANGE_OUTER])
+		if (distances[SENSOR_FRONT < RANGE_OUTER])
 			return 1;
 
 		// check if we detached
@@ -232,7 +234,7 @@ int Loop5_InnerRing(int hitDir)
 	while(1)
 	{
 		// grab current clock time
-		Time_t currentTime = clock();
+		time_t currentTime = clock();
 
 		// check GPS
 		if (timer_GPS + DELAY_GPS >= currentTime)

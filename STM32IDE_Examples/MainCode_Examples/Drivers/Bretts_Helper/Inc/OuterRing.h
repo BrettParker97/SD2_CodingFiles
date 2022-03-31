@@ -5,7 +5,8 @@
  *      Author: Brett
  */
 
+#include <stdbool.h>
 
-int OuterRing_init(int *initalHitDis);
+int OuterRing_init(float *initalHitDis);
 
-int OuterRing_control(int distances[], int reason, bool initalDetachHit, int initalHitDis);
+int OuterRing_control(int distances[], int reason, bool initalDetachHit, float initalHitDis);

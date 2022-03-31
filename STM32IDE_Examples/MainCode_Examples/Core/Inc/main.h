@@ -30,9 +30,12 @@ extern "C" {
 #include "stm32f4xx_hal.h"
 
 /* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
 
-/* USER CODE END Includes */
+int Loop3_NoObject();
+
+int Loop4_OuterLoop(int *reason);
+
+int Loop5_InnerRing(int hitDir);
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
