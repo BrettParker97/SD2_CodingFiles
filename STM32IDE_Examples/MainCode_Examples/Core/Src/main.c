@@ -175,15 +175,31 @@ int Loop4_OuterLoop(int *reason)
 			// update IR timer
 			timer_IR = currentTime;
 
-			// check if object is in front of us
+			// check if there is an object in inner ring
 			bol objectInInnerRing = false;
-			if (distaces[SENSOR_FRONT] < RANGE_INNER)
-				objectInInnerRing = true;
-			if (objectInOuterRing)
+			int hitDir;
+			for (int i = 0; i < AMOUNT_IRS; i++)
 			{
-
+				if (distances[i] < RANGE_INNER)
+				{
+					objectInInnerRing = true;
+					hitDir = i;
+					break;
+				}
 			}
 
+			// if there is something in inner ring
+			// call inner loop
+			if (objectInOuterRing)
+			{
+				// init
+
+				// control
+				InnerRing_control(hitDir);
+
+				//loop
+				Loop5_InnerRing(hitDir);
+			}
 		}
 
 		// check for initalDetachHit
@@ -198,6 +214,7 @@ int Loop4_OuterLoop(int *reason)
 		if (distnaces[SENSOR_FRONT < RANGE_OUTER])
 			return 1;
 
+		// check if we detached
 		if (initalDetachHit)
 		{
 			if (distances[SENSOR_DETACH] > RANGE_OUTER)
@@ -205,6 +222,49 @@ int Loop4_OuterLoop(int *reason)
 		}
 	}
 
+	// maybe make a saftey exit
+	// like 10-20sec then revert to main loop
+	return 0;
+}
+
+int Loop5_InnerRing(int hitDir)
+{
+	while(1)
+	{
+		// grab current clock time
+		Time_t currentTime = clock();
+
+		// check GPS
+		if (timer_GPS + DELAY_GPS >= currentTime)
+		{
+			// update GPS
+			// TODO: Write GPS stuff here
+
+			// update gps timer
+			timer_GPS = currentTime;
+		}
+
+		// check IRs
+		if (timer_IR + DELAY_IR >= currentTime)
+		{
+			// update IRs
+			// TODO: update args
+			// VL53L0X_Error error_IR = Brett_VL53L0X_FinishMultiSensing(VL53L0X_DEV Dev, VL53L0X_RangingMeasurementData_t *pRangingMeasurementData);
+			// error_IR = Brett_VL53L0X_StartMultiSensing(VL53L0X_DEV Dev);
+			// TODO: check error_IR
+
+			// update IR timer
+			timer_IR = currentTime;
+		}
+
+		// move until X distance away from inner hit
+		// TODO: 50mm is a random number, test this
+		if (distances[hitDir] > RANGE_INNER + 50)
+		{
+			return 0;
+		}
+	}
+	return 0;
 }
 
 
