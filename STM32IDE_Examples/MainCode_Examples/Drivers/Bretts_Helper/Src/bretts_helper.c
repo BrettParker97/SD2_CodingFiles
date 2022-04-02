@@ -120,6 +120,8 @@ int Brett_IR_InitIrSensors(VL53L0X_Dev_t devs[], I2C_HandleTypeDef *i2c, int how
 		Dev = &devs[i];
 
 		// FOR TESTING ONLY
+		// GPIO free
+		// 3, 4, 5, 7, 8, 9 - 15
 		// turn on XSHUT
 		if (i == 0)
 			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);

@@ -30,6 +30,8 @@ I2C_HandleTypeDef hi2c2;
 UART_HandleTypeDef huart2;
 
 int brett_status = 0;
+VL53L0X_Dev_t dev[AMOUNT_IRS];
+VL53L0X_DEV Devs = &dev[0];
 int distances[AMOUNT_IRS];
 float initalHitDis;
 bool initalDetachHit;
@@ -55,41 +57,50 @@ PUTCHAR_PROTOTYPE
   */
 int main(void)
 {
-  HAL_Init();
+	HAL_Init();
 
-  SystemClock_Config();
+	SystemClock_Config();
 
-  MX_GPIO_Init();
-  MX_I2C2_Init();
-  MX_USART2_UART_Init();
+	MX_GPIO_Init();
+	MX_I2C2_Init();
+	MX_USART2_UART_Init();
 
 
 
-  // loop 1 init GPS and run pre launch loop
+	// loop 1 init GPS and run pre launch loop
 
-  // loop 2 breakout
+	// loop 2 breakout
 
-  // loop 3 main loop, no object
-  // TODO: init sensors
-  // TODO: init antenna
-  // TODO: init video
+	// loop 3 main loop, no object
+	// TODO: init sensors
+	// TODO: init antenna
+	// TODO: init video
 
-  // do a full multi sense to initalize distances
-  // TODO: send multiple Devs into multi sense and not 1 at a time
-  // Brett_VL53L0X_StartMultiSensing(VL53L0X_DEV Dev)
-  // TODO: sned multipl Devs and Distances not 1 at a time
-  // VL53L0X_Error Brett_VL53L0X_FinishMultiSensing(VL53L0X_DEV Dev, VL53L0X_RangingMeasurementData_t *pRangingMeasurementData);
+	// do a full multi sense to initalize distances
+	for (int i = 0; i < AMOUNT_IRS; i++)
+	{
+	  brett_status = 0;
+	  brett_status = Brett_IR_StartMulti(dev, distances, AMOUNT_IRS);
+	  if (brett_status != 0)
+		  printf("first multi sense bad\n\r");
+	}
 
-  // init update timers
-  time_t startTime = clock();
-  timer_IR = startTime;
-  timer_GPS = startTime;
+	// init update timers
+	time_t startTime = clock();
+	timer_IR = startTime;
+	timer_GPS = startTime;
 
-  // start IR multi sense so we can get the data when timer is up
-  // Brett_VL53L0X_StartMultiSensing(VL53L0X_DEV Dev)
+	// start IR multi sense so we can get the data when timer is up
+	for (int i = 0; i < AMOUNT_IRS; i++)
+	{
+		brett_status = 0;
+		brett_status = Brett_VL53L0X_StartMultiSensing(&Devs[i]);
+		if (brett_status != 0)
+		  printf("start of second multi sense bad\n\r");
+	}
 
-  // start loop 3
-  brett_status = Loop3_NoObject();
+	// start loop 3
+	brett_status = Loop3_NoObject();
 }
 
 int Loop3_NoObject()
@@ -111,10 +122,19 @@ int Loop3_NoObject()
 	if (timer_IR + DELAY_IR >= currentTime)
 	{
 		// update IRs
-		// TODO: update args
-		// VL53L0X_Error error_IR = Brett_VL53L0X_FinishMultiSensing(VL53L0X_DEV Dev, VL53L0X_RangingMeasurementData_t *pRangingMeasurementData);
-		// error_IR = Brett_VL53L0X_StartMultiSensing(VL53L0X_DEV Dev);
-		// TODO: check error_IR
+		VL53L0X_RangingMeasurementData_t tempRanges[AMOUNT_IRS];
+		for (int i = 0; i < AMOUNT_IRS; i++)
+		{
+			brett_status = 0;
+			brett_status = Brett_VL53L0X_FinishMultiSensing(&Devs[i], &tempRanges[i]);
+			if (brett_status != 0)
+			  printf("start of second multi sense bad\n\r");
+
+			if (tempRanges[i].RangeStatus != 0)
+				distances[i] = 8100;
+			else
+				distances[i] = tempRanges[i].RangeMilliMeter;
+		}
 
 		// update IR timer
 		timer_IR = currentTime;
@@ -169,10 +189,19 @@ int Loop4_OuterLoop(int *reason)
 		if (timer_IR + DELAY_IR >= currentTime)
 		{
 			// update IRs
-			// TODO: update args
-			// VL53L0X_Error error_IR = Brett_VL53L0X_FinishMultiSensing(VL53L0X_DEV Dev, VL53L0X_RangingMeasurementData_t *pRangingMeasurementData);
-			// error_IR = Brett_VL53L0X_StartMultiSensing(VL53L0X_DEV Dev);
-			// TODO: check error_IR
+			VL53L0X_RangingMeasurementData_t tempRanges[AMOUNT_IRS];
+			for (int i = 0; i < AMOUNT_IRS; i++)
+			{
+				brett_status = 0;
+				brett_status = Brett_VL53L0X_FinishMultiSensing(&Devs[i], &tempRanges[i]);
+				if (brett_status != 0)
+				  printf("start of second multi sense bad\n\r");
+
+				if (tempRanges[i].RangeStatus != 0)
+					distances[i] = 8100;
+				else
+					distances[i] = tempRanges[i].RangeMilliMeter;
+			}
 
 			// update IR timer
 			timer_IR = currentTime;
@@ -250,10 +279,19 @@ int Loop5_InnerRing(int hitDir)
 		if (timer_IR + DELAY_IR >= currentTime)
 		{
 			// update IRs
-			// TODO: update args
-			// VL53L0X_Error error_IR = Brett_VL53L0X_FinishMultiSensing(VL53L0X_DEV Dev, VL53L0X_RangingMeasurementData_t *pRangingMeasurementData);
-			// error_IR = Brett_VL53L0X_StartMultiSensing(VL53L0X_DEV Dev);
-			// TODO: check error_IR
+			VL53L0X_RangingMeasurementData_t tempRanges[AMOUNT_IRS];
+			for (int i = 0; i < AMOUNT_IRS; i++)
+			{
+				brett_status = 0;
+				brett_status = Brett_VL53L0X_FinishMultiSensing(&Devs[i], &tempRanges[i]);
+				if (brett_status != 0)
+				  printf("start of second multi sense bad\n\r");
+
+				if (tempRanges[i].RangeStatus != 0)
+					distances[i] = 8100;
+				else
+					distances[i] = tempRanges[i].RangeMilliMeter;
+			}
 
 			// update IR timer
 			timer_IR = currentTime;
