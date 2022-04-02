@@ -10,6 +10,11 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
+-include Drivers/Bretts_Helper/Src/ObjectDetection/subdir.mk
+-include Drivers/Bretts_Helper/Src/IRs/Driver/platform/src/subdir.mk
+-include Drivers/Bretts_Helper/Src/IRs/Driver/core/src/subdir.mk
+-include Drivers/Bretts_Helper/Src/IMU/subdir.mk
+-include Drivers/Bretts_Helper/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
 -include objects.mk

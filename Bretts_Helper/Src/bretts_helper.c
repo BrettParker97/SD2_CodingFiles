@@ -6,6 +6,8 @@
 
 // includes
 #include "bretts_helper.h"
+#include "OuterRing.h"
+#include "CONSTANTS.h"
 
 // vars
 

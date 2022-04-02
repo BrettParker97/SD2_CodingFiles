@@ -34,23 +34,6 @@ extern "C" {
 
 /* USER CODE END Includes */
 
-int WrByte(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t index, uint8_t data);
-
-int _I2CWrite(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pdata, uint32_t count);
-
-int RdByte(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t index, uint8_t *data);
-
-int _I2CRead(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pdata, uint32_t count);
-
-int ReadMulti(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t index, uint8_t *pdata, uint32_t count);
-
-int GetGyroData();
-
-int GetAccelData();
-
-int GetMagData();
-
-void magcalMPU9250(float * dest1, float * dest2);
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */

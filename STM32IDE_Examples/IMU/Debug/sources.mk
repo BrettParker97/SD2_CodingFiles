@@ -22,5 +22,10 @@ OBJCOPY_BIN :=
 SUBDIRS := \
 Core/Src \
 Core/Startup \
+Drivers/Bretts_Helper/Src/IMU \
+Drivers/Bretts_Helper/Src/IRs/Driver/core/src \
+Drivers/Bretts_Helper/Src/IRs/Driver/platform/src \
+Drivers/Bretts_Helper/Src/ObjectDetection \
+Drivers/Bretts_Helper/Src \
 Drivers/STM32F4xx_HAL_Driver/Src \
 

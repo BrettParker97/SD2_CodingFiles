@@ -27,7 +27,22 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32F4xx_hal.h
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32F4xx_hal.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/bretts_helper.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/IRs/Driver/core/inc/vl53l0x_api.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/IRs/Driver/core/inc/vl53l0x_api_strings.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/IRs/Driver/core/inc/vl53l0x_def.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/IRs/Driver/core/inc/vl53l0x_device.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/IRs/Driver/platform/inc/vl53l0x_types.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/IRs/Driver/platform/inc/vl53l0x_platform.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/IRs/Driver/core/inc/vl53l0x_def.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/IRs/Driver/platform/inc/vl53l0x_platform_log.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/ObjectDetection/NoObject.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/CONSTANTS.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/ObjectDetection/OuterRing.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/ObjectDetection/InnerRing.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/IMU/MPU9250.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/helpful_i2c.h
 
 ../Core/Inc/main.h:
 
@@ -88,3 +103,33 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32F4xx_hal.h:
+
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/bretts_helper.h:
+
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/IRs/Driver/core/inc/vl53l0x_api.h:
+
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/IRs/Driver/core/inc/vl53l0x_api_strings.h:
+
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/IRs/Driver/core/inc/vl53l0x_def.h:
+
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/IRs/Driver/core/inc/vl53l0x_device.h:
+
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/IRs/Driver/platform/inc/vl53l0x_types.h:
+
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/IRs/Driver/platform/inc/vl53l0x_platform.h:
+
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/IRs/Driver/core/inc/vl53l0x_def.h:
+
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/IRs/Driver/platform/inc/vl53l0x_platform_log.h:
+
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/ObjectDetection/NoObject.h:
+
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/CONSTANTS.h:
+
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/ObjectDetection/OuterRing.h:
+
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/ObjectDetection/InnerRing.h:
+
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/IMU/MPU9250.h:
+
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IMU/Drivers/Bretts_Helper/Inc/helpful_i2c.h:
