@@ -2,8 +2,8 @@ bretts_helper.c:15:15:Brett_VL53L0X_StartMultiSensing	24	static
 bretts_helper.c:27:15:Brett_VL53L0X_FinishMultiSensing	24	static
 bretts_helper.c:57:5:Brett_IR_StartMulti	72	static
 bretts_helper.c:106:5:Brett_IR_InitIrSensors	48	static
-bretts_helper.c:171:5:Brett_IR_StartSingle	56	static
-bretts_helper.c:193:5:Brett_IR_InitIrSensor	40	static
-bretts_helper.c:251:15:Brett_IR_SetHighSpeed	24	static
-bretts_helper.c:264:15:Brett_IR_SetHighAcc	24	static
-bretts_helper.c:277:15:Brett_IR_SetLongRange	24	static
+bretts_helper.c:216:5:Brett_IR_StartSingle	56	static
+bretts_helper.c:238:5:Brett_IR_InitIrSensor	40	static
+bretts_helper.c:296:15:Brett_IR_SetHighSpeed	24	static
+bretts_helper.c:309:15:Brett_IR_SetHighAcc	24	static
+bretts_helper.c:322:15:Brett_IR_SetLongRange	24	static

@@ -8,8 +8,7 @@
 #include "OuterRing.h"
 #include "CONSTANTS.h"
 #include <stdbool.h>
-
-
+#include "motor_test.h"
 
 // TODO: give ptr to GPS data
 int OuterRing_init(float *initalHitDis)
@@ -20,14 +19,15 @@ int OuterRing_init(float *initalHitDis)
 }
 
 
-int OuterRing_control(int distances[], int reason, bool initalDetachHit, float initalHitDis)
+int OuterRing_control(int distances[], int reason, bool initalDetachHit,
+		float initalHitDis, int *magDir, float *mag, I2C_HandleTypeDef *hi2c2)
 {
 	// reason == 1 means object ahead
 	if (reason == 1)
 	{
 		// turn to first open position, clockwise
 		int direction;
-		int backup = distances[0];	// highest valued direction
+		int backup = 1;	// highest valued direction
 		for (int i = 0; i < AMOUNT_IRS; i++)
 		{
 			// if greater than outer range then its open
@@ -49,7 +49,8 @@ int OuterRing_control(int distances[], int reason, bool initalDetachHit, float i
 		}
 
 		// turn to choosen direction
-		//TODO: turn(direction)
+		IMU_getAccurateMag(hi2c2, mag);
+		TurnDirection(hi2c2, direction, mag, magDir);
 
 		// update initalDetachHit
 		if (distances[SENSOR_DETACH] < RANGE_OUTER)
@@ -62,6 +63,17 @@ int OuterRing_control(int distances[], int reason, bool initalDetachHit, float i
 	}
 	else if (reason == 2)
 	{
+		// test code
+		// if detach then turn north and return to main loop
+		IMU_getAccurateMag(hi2c2, mag);
+		int direction = 0 - *magDir;
+		if (direction < 0)
+			direction += 8;
+		TurnDirection(hi2c2, direction, mag, magDir);
+		return 1;
+
+
+
 		// check that current distance to home is
 		// less than initalHitDis
 		// TODO: grab gps data and make distance

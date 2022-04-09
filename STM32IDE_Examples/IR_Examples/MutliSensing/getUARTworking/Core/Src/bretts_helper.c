@@ -6,6 +6,21 @@
 
 // includes
 #include "bretts_helper.h"
+#include "helpful_i2c.h"
+
+#define GPIO_read 0x41
+#define GPIO_write 0x40
+
+#define GPIO_All_Off 0x00
+#define GPIO_All_On 0x03
+#define GPIO_P0_On 0x01
+#define GPIO_P1_On 0x02
+#define GPIO_P2_On 0x04
+#define GPIO_P3_On 0x08
+#define GPIO_P4_On 0x10
+#define GPIO_P5_On 0x20
+#define GPIO_P6_On 0x40
+#define GPIO_P7_On 0x80
 
 // vars
 
@@ -111,19 +126,29 @@ int Brett_IR_InitIrSensor(VL53L0X_Dev_t devs[], I2C_HandleTypeDef *i2c, int howM
 	uint8_t newi2c = 0x52;
 	int bretts_status = 0;
 
+
+	static const uint8_t GPIO_expander = 0x20 << 1;
+	WrByte(i2c, GPIO_expander, GPIO_write, GPIO_All_Off);
+	HAL_Delay(100);
+
+	WrByte(i2c, GPIO_expander, GPIO_write, GPIO_All_On);
+	HAL_Delay(100);
+
 	for (int i = 0; i < howManyDevs; i++)
 	{
 		// point to dev
 		VL53L0_DEV	Dev;
 		Dev = &devs[i];
 
+
 		// FOR TESTING ONLY
+		HAL_Delay(100);
 		// turn on XSHUT
 		if (i == 0)
-			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);
+			WrByte(i2c, GPIO_expander, GPIO_write, GPIO_P0_On);
 		else
-			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_SET);
-		HAL_Delay(10);
+			WrByte(i2c, GPIO_expander, GPIO_write, GPIO_P1_On);
+		HAL_Delay(100);
 
 		// general dev inits
 		Dev->comms_type =  1;

@@ -97,23 +97,20 @@ int main(void)
 
 	while(1)
 	{
+
 		// get data
-		IMU_getData(&hi2c2, &gyro[0], &accel[0], &mag[0]);
+		IMU_getAccurateMag(&hi2c2, mag);
+
+		printf("magx = %f\n\r", mag[0]);
+		printf("magy = %f\n\r", mag[1]);
+		printf("\n\r");
 
 		// print data
-		printf(" GYRO_X: %f\n\r", gyro[0]);
-		printf(" GYRO_Y: %f\n\r", gyro[1]);
-		printf(" GYRO_Z: %f\n\r", gyro[2]);
-		printf(" ACCEL_X: %f\n\r", accel[0]);
-		printf(" ACCEL_Y: %f\n\r", accel[1]);
-		printf(" ACCEL_Z: %f\n\r", accel[2]);
-		printf(" MAGNE_X: %f\n\r", mag[0]);
-		printf(" MAGNE_Y: %f\n\r", mag[1]);
-		printf(" MAGNE_Z: %f\n\r", mag[2]);
 
 		// delay for 1 sec for next reading
-		HAL_Delay(1000);
+		HAL_Delay(100);
 	}
+
 }
 
 /**

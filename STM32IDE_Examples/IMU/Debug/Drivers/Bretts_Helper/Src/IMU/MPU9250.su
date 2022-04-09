@@ -2,6 +2,7 @@ MPU9250.c:25:5:IMU_init	32	static
 MPU9250.c:70:5:IMU_getData	32	static
 MPU9250.c:90:5:IMU_getGyroData	48	static
 MPU9250.c:107:5:IMU_getAccelData	48	static
-MPU9250.c:124:5:IMU_getMagData	48	static
-MPU9250.c:158:5:calibration_GetMag	40	static
-MPU9250.c:189:6:magcalMPU9250	104	static
+MPU9250.c:124:5:IMU_getAccurateMag	32	static
+MPU9250.c:141:5:IMU_getMagData	48	static
+MPU9250.c:176:5:calibration_GetMag	40	static
+MPU9250.c:207:6:magcalMPU9250	104	static

@@ -1,13 +1,13 @@
 Drivers/VL53L0x/Api/core/src/vl53l0x_api.o: \
  ../Drivers/VL53L0x/Api/core/src/vl53l0x_api.c \
- D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api.h \
- D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api_strings.h \
- D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_def.h \
- D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_device.h \
- D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/platform/inc/vl53l0x_types.h \
- D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/platform/inc/vl53l0x_platform.h \
- D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_def.h \
- D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/platform/inc/vl53l0x_platform_log.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api_strings.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_def.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_device.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/platform/inc/vl53l0x_types.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/platform/inc/vl53l0x_platform.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_def.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/platform/inc/vl53l0x_platform_log.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -36,27 +36,27 @@ Drivers/VL53L0x/Api/core/src/vl53l0x_api.o: \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_tuning.h \
- D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_interrupt_threshold_settings.h \
- D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api_core.h \
- D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api_calibration.h \
- D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api_strings.h
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_tuning.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_interrupt_threshold_settings.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api_core.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api_calibration.h \
+ C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api_strings.h
 
-D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api.h:
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api.h:
 
-D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api_strings.h:
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api_strings.h:
 
-D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_def.h:
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_def.h:
 
-D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_device.h:
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_device.h:
 
-D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/platform/inc/vl53l0x_types.h:
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/platform/inc/vl53l0x_types.h:
 
-D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/platform/inc/vl53l0x_platform.h:
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/platform/inc/vl53l0x_platform.h:
 
-D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_def.h:
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_def.h:
 
-D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/platform/inc/vl53l0x_platform_log.h:
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/platform/inc/vl53l0x_platform_log.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 
@@ -114,12 +114,12 @@ D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/platform/inc/vl53l0
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
-D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_tuning.h:
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_tuning.h:
 
-D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_interrupt_threshold_settings.h:
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_interrupt_threshold_settings.h:
 
-D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api_core.h:
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api_core.h:
 
-D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api_calibration.h:
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api_calibration.h:
 
-D:/STM32CubeIDE_workspace/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api_strings.h:
+C:/Users/Brett/Desktop/School/SD2/IRFiles/getUARTworking/SD2_CodingFiles/STM32IDE_Examples/IR_Examples/MutliSensing/getUARTworking/Drivers/VL53L0x/Api/core/inc/vl53l0x_api_strings.h:

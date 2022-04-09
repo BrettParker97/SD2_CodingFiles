@@ -28,6 +28,8 @@
 
 int IMU_init();
 
+int IMU_getAccurateMag(I2C_HandleTypeDef *hi2c2, float *mag);
+
 int IMU_getData(I2C_HandleTypeDef *hi2c2, float *gyro, float *accel, float *mag);
 
 int IMU_getGyroData(I2C_HandleTypeDef *hi2c2, float *gyro);

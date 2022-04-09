@@ -6,15 +6,21 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Drivers/Bretts_Helper/Src/bretts_helper.c \
-../Drivers/Bretts_Helper/Src/helpful_i2c.c 
+../Drivers/Bretts_Helper/Src/clock_rtc.c \
+../Drivers/Bretts_Helper/Src/helpful_i2c.c \
+../Drivers/Bretts_Helper/Src/motor_test.c 
 
 OBJS += \
 ./Drivers/Bretts_Helper/Src/bretts_helper.o \
-./Drivers/Bretts_Helper/Src/helpful_i2c.o 
+./Drivers/Bretts_Helper/Src/clock_rtc.o \
+./Drivers/Bretts_Helper/Src/helpful_i2c.o \
+./Drivers/Bretts_Helper/Src/motor_test.o 
 
 C_DEPS += \
 ./Drivers/Bretts_Helper/Src/bretts_helper.d \
-./Drivers/Bretts_Helper/Src/helpful_i2c.d 
+./Drivers/Bretts_Helper/Src/clock_rtc.d \
+./Drivers/Bretts_Helper/Src/helpful_i2c.d \
+./Drivers/Bretts_Helper/Src/motor_test.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -24,7 +30,7 @@ Drivers/Bretts_Helper/Src/%.o: ../Drivers/Bretts_Helper/Src/%.c Drivers/Bretts_H
 clean: clean-Drivers-2f-Bretts_Helper-2f-Src
 
 clean-Drivers-2f-Bretts_Helper-2f-Src:
-	-$(RM) ./Drivers/Bretts_Helper/Src/bretts_helper.d ./Drivers/Bretts_Helper/Src/bretts_helper.o ./Drivers/Bretts_Helper/Src/helpful_i2c.d ./Drivers/Bretts_Helper/Src/helpful_i2c.o
+	-$(RM) ./Drivers/Bretts_Helper/Src/bretts_helper.d ./Drivers/Bretts_Helper/Src/bretts_helper.o ./Drivers/Bretts_Helper/Src/clock_rtc.d ./Drivers/Bretts_Helper/Src/clock_rtc.o ./Drivers/Bretts_Helper/Src/helpful_i2c.d ./Drivers/Bretts_Helper/Src/helpful_i2c.o ./Drivers/Bretts_Helper/Src/motor_test.d ./Drivers/Bretts_Helper/Src/motor_test.o
 
 .PHONY: clean-Drivers-2f-Bretts_Helper-2f-Src
 

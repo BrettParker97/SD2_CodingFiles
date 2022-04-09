@@ -15,7 +15,7 @@ static const uint8_t MAG_AD = 0x0C << 1;
 static const float MPU9250mRes = 10.*4912./32760.0;
 
 // saved from calibration
-static const float dest1[3] = {29, -8, -200};
+static const float dest1[3] = {-54, -8, -200};
 static const float dest2[3] = {1.497, .795, .930599};
 
 float asax;
@@ -121,6 +121,23 @@ int IMU_getAccelData(I2C_HandleTypeDef *hi2c2, float *accel)
 	return status;
 }
 
+int IMU_getAccurateMag(I2C_HandleTypeDef *hi2c2, float *mag)
+{
+	float magData[3];
+	for (int i = 0; i < 40; i++)
+	{
+		IMU_getMagData(hi2c2, mag);
+		magData[0] += mag[0];
+		magData[1] += mag[1];
+		magData[2] += mag[2];
+		HAL_Delay(10);
+	}
+
+	mag[0] = magData[0]/40;
+	mag[1] = magData[1]/40;
+	mag[2] = magData[2]/40;
+}
+
 int IMU_getMagData(I2C_HandleTypeDef *hi2c2, float *mag)
 {
 	int status = 0;
@@ -150,7 +167,8 @@ int IMU_getMagData(I2C_HandleTypeDef *hi2c2, float *mag)
 	tempMag[1] = magBuff[2] | (magBuff[3]<<8);
 	tempMag[2] = magBuff[4] | (magBuff[5]<<8);
 	mag[0] = ((tempMag[0] - dest1[0]) * MPU9250mRes*asax);
-	mag[1] = ((tempMag[1] - dest1[1]) * MPU9250mRes*asay);
+	mag[1] = (tempMag[0] - dest1[0]);
+	//mag[1] = ((tempMag[1] - dest1[1]) * MPU9250mRes*asay);
 	mag[2] = ((tempMag[2] - dest1[2]) * MPU9250mRes*asaz);
 	return status;
 }

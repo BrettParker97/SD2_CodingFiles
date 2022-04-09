@@ -30,12 +30,9 @@ extern "C" {
 #include "stm32f4xx_hal.h"
 
 /* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
 
-int Loop3_NoObject();
-
-int Loop4_OuterLoop(int *reason);
-
-int Loop5_InnerRing(int hitDir);
+/* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
@@ -44,7 +41,8 @@ int Loop5_InnerRing(int hitDir);
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-
+int Loop4_OuterLoop(int *reason);
+int Loop3_NoObject();
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/

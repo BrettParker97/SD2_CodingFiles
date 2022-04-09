@@ -119,14 +119,59 @@ int Brett_IR_InitIrSensors(VL53L0X_Dev_t devs[], I2C_HandleTypeDef *i2c, int how
 		VL53L0_DEV	Dev;
 		Dev = &devs[i];
 
-		// FOR TESTING ONLY
-		// GPIO free
-		// 3, 4, 5, 7, 8, 9 - 15
 		// turn on XSHUT
 		if (i == 0)
-			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);
-		else
+		{
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_SET);
+			if (bretts_status != 0)
+				printf("GPIO turn on 0 didnt work\n\r");
+		}
+		else if (i == 1)
+		{
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
+			if (bretts_status != 0)
+				printf("GPIO turn on 1 didnt work\n\r");
+		}
+		else if (i == 2)
+		{
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
+			if (bretts_status != 0)
+				printf("GPIO turn on 2 didnt work\n\r");
+		}
+		else if (i == 3)
+		{
 			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_SET);
+			if (bretts_status != 0)
+				printf("GPIO turn on 3 didnt work\n\r");
+		}
+		else if (i == 4)
+		{
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_9, GPIO_PIN_SET);
+			if (bretts_status != 0)
+				printf("GPIO turn on 4 didnt work\n\r");
+		}
+		else if (i == 5)
+		{
+			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);
+			if (bretts_status != 0)
+				printf("GPIO turn on 5 didnt work\n\r");
+		}
+		else if (i == 6)
+		{
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
+			if (bretts_status != 0)
+				printf("GPIO turn on 6 didnt work\n\r");
+		}
+		else if (i == 7)
+		{
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);
+			if (bretts_status != 0)
+				printf("GPIO turn on 7 didnt work\n\r");
+		}
+		else
+		{
+			printf("this shouldnt happen in GPIO_expander area\n\r");
+		}
 		HAL_Delay(10);
 
 		// general dev inits

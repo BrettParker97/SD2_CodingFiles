@@ -62,8 +62,8 @@ all: main-build
 main-build: getUARTworking.elf secondary-outputs
 
 # Tool invocations
-getUARTworking.elf: $(OBJS) $(USER_OBJS) D:\STM32CubeIDE_workspace\getUARTworking\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "getUARTworking.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\STM32CubeIDE_workspace\getUARTworking\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="getUARTworking.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+getUARTworking.elf: $(OBJS) $(USER_OBJS) C:\Users\Brett\Desktop\School\SD2\IRFiles\getUARTworking\SD2_CodingFiles\STM32IDE_Examples\IR_Examples\MutliSensing\getUARTworking\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "getUARTworking.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Brett\Desktop\School\SD2\IRFiles\getUARTworking\SD2_CodingFiles\STM32IDE_Examples\IR_Examples\MutliSensing\getUARTworking\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="getUARTworking.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

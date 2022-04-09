@@ -8,6 +8,8 @@
 #include "OuterRing.h"
 #include "InnerRing.h"
 #include "MPU9250.h"
+#include "clock_rtc.h"
+#include "motor_test.h"
 
 // prototypes
 VL53L0X_API VL53L0X_Error Brett_VL53L0X_StartMultiSensing(VL53L0X_DEV Dev);

@@ -21,6 +21,7 @@
 #include "stm32F4xx_hal.h"
 #include "vl53l0x_api.h"
 #include "bretts_helper.h"
+#include "helpful_i2c.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -53,6 +54,19 @@ int distances[2];
 int howManyDevs = 2;
 int brett_status = 0;
 /* USER CODE END PV */
+
+#define GPIO_read 0x41
+#define GPIO_write 0x40
+
+#define GPIO_All_Off 0x00
+#define GPIO_P0_On 0x01
+#define GPIO_P1_On 0x02
+#define GPIO_P2_On 0x04
+#define GPIO_P3_On 0x08
+#define GPIO_P4_On 0x10
+#define GPIO_P5_On 0x20
+#define GPIO_P6_On 0x40
+#define GPIO_P7_On 0x80
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
