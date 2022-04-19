@@ -15,8 +15,8 @@ static const uint8_t MAG_AD = 0x0C << 1;
 static const float MPU9250mRes = 10.*4912./32760.0;
 
 // saved from calibration
-static const float dest1[3] = {-54, -8, -200};
-static const float dest2[3] = {1.497, .795, .930599};
+static const float d1[3] = {12, 108, 304};
+static const float d2[3] = {1.497, .795, .930599};
 
 float asax;
 float asay;
@@ -51,9 +51,9 @@ int IMU_init(I2C_HandleTypeDef *hi2c2)
 
 	//read the Sensitivity Adjustment values
 	status = ReadMulti(hi2c2, MAG_AD, ASAX_AD, &sensAdjust[0], 3);
-	asax = (sensAdjust[0] -128)*0.5/128+1;
-	asay = (sensAdjust[1] -128)*0.5/128+1;
-	asaz = (sensAdjust[2] -128)*0.5/128+1;
+	asax = (float)(sensAdjust[0] -128)/256. + 1.;
+	asay = (float)(sensAdjust[1] -128)/256. + 1.;
+	asaz = (float)(sensAdjust[2] -128)/256. + 1.;
 
 	//reset the Magnetometer to power down mode
 	status = WrByte(hi2c2, MAG_AD, CNTL1_AD, 0x00);
@@ -136,6 +136,7 @@ int IMU_getAccurateMag(I2C_HandleTypeDef *hi2c2, float *mag)
 	mag[0] = magData[0]/40;
 	mag[1] = magData[1]/40;
 	mag[2] = magData[2]/40;
+	return 0;
 }
 
 int IMU_getMagData(I2C_HandleTypeDef *hi2c2, float *mag)
@@ -166,10 +167,9 @@ int IMU_getMagData(I2C_HandleTypeDef *hi2c2, float *mag)
 	tempMag[0] = magBuff[0] | (magBuff[1]<<8);
 	tempMag[1] = magBuff[2] | (magBuff[3]<<8);
 	tempMag[2] = magBuff[4] | (magBuff[5]<<8);
-	mag[0] = ((tempMag[0] - dest1[0]) * MPU9250mRes*asax);
-	mag[1] = (tempMag[0] - dest1[0]);
-	//mag[1] = ((tempMag[1] - dest1[1]) * MPU9250mRes*asay);
-	mag[2] = ((tempMag[2] - dest1[2]) * MPU9250mRes*asaz);
+	mag[0] = ((float)tempMag[0]-d1[0])*MPU9250mRes*asax;
+	mag[1] = ((float)tempMag[1]-d1[1])*MPU9250mRes*asay;
+	mag[2] = ((float)tempMag[2]-d1[2])*MPU9250mRes*asaz;
 	return status;
 }
 
@@ -197,9 +197,9 @@ int calibration_GetMag(I2C_HandleTypeDef *hi2c2, int16_t *mag)
 	if (magicbit && MAGIC_OVERFLOW_MASK)
 		return -4;
 
-	mag[0] = magBuff[0] | (magBuff[1]<<8);
-	mag[1] = magBuff[2] | (magBuff[3]<<8);
-	mag[2] = magBuff[4] | (magBuff[5]<<8);
+	mag[0] = magBuff[0] | ((int16_t)magBuff[1]<<8);
+	mag[1] = magBuff[2] | ((int16_t)magBuff[3]<<8);
+	mag[2] = magBuff[4] | ((int16_t)magBuff[5]<<8);
 
 	return status;
 }
@@ -216,7 +216,7 @@ void magcalMPU9250(I2C_HandleTypeDef *hi2c2, float * dest1, float * dest2)
 
 	// shoot for ~fifteen seconds of mag data
 	if(MPU9250Mmode == 0x02) sample_count = 128;  // at 8 Hz ODR, new mag data is available every 125 ms
-	if(MPU9250Mmode == 0x06) sample_count = 1500;  // at 100 Hz ODR, new mag data is available every 10 ms
+	if(MPU9250Mmode == 0x06) sample_count = 3000;  // at 100 Hz ODR, new mag data is available every 10 ms
 	for(ii = 0; ii < sample_count; ii++)
 	{
 		int16_t magBuff [6];

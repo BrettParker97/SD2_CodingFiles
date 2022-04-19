@@ -1,0 +1,5 @@
+helpful_i2c.c:13:5:WrByte	24	static
+helpful_i2c.c:24:5:Brett_I2CWrite	40	static
+helpful_i2c.c:35:5:RdByte	32	static
+helpful_i2c.c:48:5:Brett_I2CRead	40	static
+helpful_i2c.c:60:5:ReadMulti	32	static

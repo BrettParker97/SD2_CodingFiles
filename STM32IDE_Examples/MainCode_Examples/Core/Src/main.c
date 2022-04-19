@@ -121,12 +121,6 @@ int main(void)
 	// init IMU
 	IMU_init(&hi2c2);
 
-//	while(1)
-//	{
-//		IMU_getAccurateMag(&hi2c2, mag);
-//		printf("%f\n\r",mag[0]);
-//	}
-
 	// TODO: init GPS
 
 	// TODO: init antenna

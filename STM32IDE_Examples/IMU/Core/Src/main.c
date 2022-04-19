@@ -95,21 +95,39 @@ int main(void)
 	// init IMU
 	IMU_init(&hi2c2);
 
-	while(1)
+	while (1)
 	{
-
-		// get data
 		IMU_getAccurateMag(&hi2c2, mag);
 
-		printf("magx = %f\n\r", mag[0]);
-		printf("magy = %f\n\r", mag[1]);
-		printf("\n\r");
+		float direction = 0;
+		if (mag[0] < 1 && mag[0] > -1)
+		{
+			if (mag[1] < 0)
+				direction = 90;
+			if (mag[1] > 0)
+				direction = 0;
+		}
+		else
+			direction = atan(mag[1]/mag[0]) * (180/3.14159);
 
-		// print data
-
-		// delay for 1 sec for next reading
-		HAL_Delay(100);
+		if (direction > 360)
+			direction -= 360;
+		if (direction < 0)
+			direction += 360;
+		printf("x: %f\n\r", mag[0]);
+		printf("y: %f\n\r", mag[1]);
+		printf("degree: %f\n\r", direction);
+		HAL_Delay(1000);
 	}
+
+
+
+//
+//	float d1[3];
+//	float d2[3];
+//	magcalMPU9250(&hi2c2, d1, d2);
+//	printf("d1 = {%f, %f, %f}\n\r", d1[0], d1[1], d1[2]);
+//	printf("d2 = {%f, %f, %f}\n\r", d2[0], d2[1], d2[2]);
 
 }
 

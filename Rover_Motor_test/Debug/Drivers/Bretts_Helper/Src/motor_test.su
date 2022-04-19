@@ -1,0 +1,6 @@
+motor_test.c:15:6:LittleTurnRight	16	static
+motor_test.c:22:6:LittleTurnLeft	16	static
+motor_test.c:29:6:SetMotors	40	static
+motor_test.c:99:6:TurnToNorth	24	static
+motor_test.c:119:6:FineTuneTurn	48	static
+motor_test.c:263:6:TurnDirection	32	static

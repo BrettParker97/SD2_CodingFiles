@@ -1,0 +1,91 @@
+/*
+ * CONSTANTS.h
+ *
+ *  Created on: Mar 30, 2022
+ *      Author: Brett
+ */
+
+#ifndef BRETTS_HELPER_INC_CONSTANTS_H_
+#define BRETTS_HELPER_INC_CONSTANTS_H_
+
+
+#define DELAY_IR 200 	// ms
+#define DELAY_GPS 1000 	// ms
+
+#define RANGE_INNER 100 // mm
+#define RANGE_OUTER 609 // mm
+
+#define AMOUNT_IRS 8 	// # of devs
+
+#define SENSOR_FRONT 0	// index of sensor
+#define SENSOR_DETACH 5 // index of sensor
+
+// for GPIO expander
+//#define GPIO_read 0x41
+//#define GPIO_write 0x40
+
+#define GPIO_IR0_PORT GPIOE
+#define GPIO_IR0_PIN GPIO_PIN_3
+#define GPIO_IR1_PORT GPIOE
+#define GPIO_IR1_PIN GPIO_PIN_4
+#define GPIO_IR2_PORT GPIOF
+#define GPIO_IR2_PIN GPIO_PIN_6
+#define GPIO_IR3_PORT GPIOF
+#define GPIO_IR3_PIN GPIO_PIN_7
+#define GPIO_IR4_PORT GPIOD
+#define GPIO_IR4_PIN GPIO_PIN_12
+#define GPIO_IR5_PORT GPIOD
+#define GPIO_IR5_PIN GPIO_PIN_13
+#define GPIO_IR6_PORT GPIOC
+#define GPIO_IR6_PIN GPIO_PIN_6
+#define GPIO_IR7_PORT GPIOC
+#define GPIO_IR7_PIN GPIO_PIN_7
+
+#define GPIO_MOTOR0A_PORT GPIOA
+#define GPIO_MOTOR0A_PIN GPIO_PIN_2
+#define GPIO_MOTOR0B_PORT GPIOA
+#define GPIO_MOTOR0B_PIN GPIO_PIN_3
+#define GPIO_MOTOR1A_PORT GPIOA
+#define GPIO_MOTOR1A_PIN GPIO_PIN_4
+#define GPIO_MOTOR1B_PORT GPIOA
+#define GPIO_MOTOR1B_PIN GPIO_PIN_5
+#define GPIO_MOTOR2A_PORT GPIOE
+#define GPIO_MOTOR2A_PIN GPIO_PIN_9
+#define GPIO_MOTOR2B_PORT GPIOE
+#define GPIO_MOTOR2B_PIN GPIO_PIN_11
+#define GPIO_MOTOR3A_PORT GPIOE
+#define GPIO_MOTOR3A_PIN GPIO_PIN_13
+#define GPIO_MOTOR3B_PORT GPIOE
+#define GPIO_MOTOR3B_PIN GPIO_PIN_14
+
+#define MOVE_MOTORMASK0 0x80
+#define MOVE_MOTORMASK1 0x40
+#define MOVE_MOTORMASK2 0x20
+#define MOVE_MOTORMASK3 0x10
+#define MOVE_MOTORMASK4 0x8
+#define MOVE_MOTORMASK5 0x4
+#define MOVE_MOTORMASK6 0x2
+#define MOVE_MOTORMASK7 0x1
+
+#define MOVE_RIGHT 0x55
+#define MOVE_LEFT 0xAA
+#define MOVE_STOP 0x0
+#define MOVE_START 0xA5
+
+#define MOTOR_START 0
+#define MOTOR_STOP 1
+#define MOTOR_LEFT 2
+#define MOTOR_RIGHT 3
+
+// used for mag "directions"
+#define HARDCODE_0 17
+#define HARDCODE_1 55
+#define HARDCODE_2 145
+#define HARDCODE_3 162
+#define HARDCODE_4 342
+#define HARDCODE_5 286
+#define HARDCODE_6 160
+#define HARDCODE_7 45
+
+
+#endif /* BRETTS_HELPER_INC_CONSTANTS_H_ */
